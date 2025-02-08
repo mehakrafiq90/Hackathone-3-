@@ -1,14 +1,17 @@
+import { Image } from "sanity";
+
 export interface Product {
     _id: string;
-    name: string;
+    _type: "categort";
+    productName: string;
     description: string;
     price: number;
     image?: {
       asset: {
-        _id: string;
-        url: string;
+        _ref: string;
+        type: "Image";
       };
-    };
+    }
     slug: {
       current: string;
     };

@@ -19,7 +19,7 @@ const ProductClient: React.FC<ProductClientProps> = ({ product }) => {
       type: 'ADD_TO_CART', 
       payload: {
         _id: product._id,
-        name: product.name,
+        productName: product.name,
         description: product.description,
         price: product.price,
         image: product.image,

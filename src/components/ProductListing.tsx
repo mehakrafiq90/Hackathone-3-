@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 import Image, { ImageLoader } from 'next/image';
@@ -11,7 +12,7 @@ interface Product {
   slug: { current: string };
 }
 
-const DEFAULT_IMAGE = '/images/default-image.jpg';
+const DEFAULT_IMAGE = '/default-image.png';
 
 const customImageLoader: ImageLoader = ({ src, width, quality }) => {
   return `${src}?w=${width}&q=${quality || 75}`;
@@ -22,6 +23,7 @@ const ProductListing: React.FC<{ allProducts: Product[] }> = ({ allProducts }) =
     <div className="product-listing w-full h-auto bg-white py-10 md:py-20 px-6 md:px-20">
       <div className="product-grid grid grid-cols-2 md:grid-cols-3 gap-8">
         {allProducts.map((product) => {
+         
           const imageUrl = product.image ? urlFor(product.image).url() : DEFAULT_IMAGE;
 
           return (
